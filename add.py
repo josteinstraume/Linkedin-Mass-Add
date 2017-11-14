@@ -1,13 +1,13 @@
 from selenium import webdriver as wd;
-import sys, os;
+import sys, os, credentials;
 
 #
 # Press CTRL+C to stop the script
 #
 
 page_limit = 5;
-username = 'aaa@bbb.com';		##########-------MAIL ID----------
-password = 'cccdddeeee';		##########-------PASSWORD---------
+username = credentials.username['username']
+password = credentials.password['password']
 
 firefox = wd.Firefox ();
 firefox.get ('https://linkedin.com/');
@@ -34,7 +34,7 @@ while (True):
 		if (not currentPage == firefox.current_url):
 			firefox.back ();
 			connectButtons = firefox.find_elements_by_link_text ('Connect');
-	
+
 		counter += 1;
 
 	try:
